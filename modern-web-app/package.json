@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "test:unit": "jest --ci",
-    "deploy:simulate": "../scripts/simulate-deployment.sh"
+    "deploy:simulate": "../scripts/simulate-deployment.sh",
+    "test:smoke": "../scripts/smoke-test.sh"
   },
   "dependencies": {
     "next": "latest",
