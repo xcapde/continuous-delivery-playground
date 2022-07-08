@@ -24,7 +24,7 @@ The stack:
 
 - [Prerequisites](docs/00-prerequisites.md)
 - [Lab 1 - Local development workflow](docs/01-local-development.md)
-- [Lab 2 - Creating a hello world pipeline (TBC) ](docs/tbd.md)
+- [Lab 2 - Creating a hello world pipeline](docs/02-creating-hello-world-pipeline.md)
 
 - [Lab 3 - Continuous integration: Testing the application (TBC) ](docs/tbd.md)
 - [Lab 4 - Continuous integration: Building and packaging the application (TBC) ](docs/tbd.md)
