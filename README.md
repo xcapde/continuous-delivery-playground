@@ -28,5 +28,5 @@ The stack:
 
 - [Lab 3 - Continuous integration: Testing the application](docs/03-adding-test-to-the-pipeline.md)
 - [Lab 4 - Continuous integration: Building and packaging the application](docs/04-building-and-packaging-the-application.md)
-- [Lab 5 - Continuous delivery: Deploying the application to an environment (TBC) ](docs/tbd.md)
+- [Lab 5 - Continuous delivery: Deploying the application to an environment](docs/05-deploying-to-an-environment.md)
 - [Lab 6 - Continuous delivery: Adding a smoke test (TBC) ](docs/tbd.md)
