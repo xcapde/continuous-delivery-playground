@@ -4,17 +4,16 @@
 This tutorial uses github actions to create a hello world pipeline.
 
 
-The first step is to create a github workflow, to do so, you have to create the following folder structure:
+The first step is to create a github workflow, create the following folder structure:
 ```
    mkdir .github/
    mkdir .github/workflows/
 ```
-Now we creat a workflow inside the workflows folder
+Now we create a workflow inside the workflows folder
 ```
 touch .github/workflows/pipeline.yml
 ```
-
-copy the following code :
+The next step is to add the pipeline definition.
 ```
 name: CI/CD Pipeline
 
@@ -26,24 +25,31 @@ jobs:
       - name: Hello World step
         run: echo "Hello World!"
 ```
-### 
-***Name***: This is just specifying a name for the workflow
-***On***: The on command is used to specify an event that will trigger the workflow, this event can be push, pull_request, etc
-***Jobs***: Here we are specifying the job we want to run, in this case, we are setting up a build job.
-***Runs-on:***  is specifying the OS you want your workflow to run on 
-***Steps:*** Steps just indicate the various steps you want to run on that job
+### Pipeline Core Concepts
+- ***Name***: This is just specifying a name for the workflow
+- ***On***: The on command is used to specify an event that will trigger the workflow, this event can be push, pull_request, etc
+- ***Jobs***: Here we are specifying the job we want to run, in this case, we are setting up a build job.
+- ***Runs-on:***  is specifying the OS you want your workflow to run on 
+- ***Steps:*** Steps just indicate the various steps you want to run on that job
 
-Let's test our workflow:
+### Let's test our workflow
+Once the changes are commited the pipeline should run automatically as especified to run on push.
+
 ```
 git add .
 git commit -m "Add workflow file"
 git push
 ```
-once you push to the branch, you should see 
-## Lab checklist (TBC)
+
+## Lab checklist
 
 - [x] Read the instructions
-- [ ] TBC
+- [ ] Create folder structure
+- [ ] Create a github workflow
+- [ ] Pipeline Core Concepts
+- [ ] Test the workflow
+- [ ] Useful Theory
+
 
 ## Useful Theory 
 [What is a pipeline?](https://www.atlassian.com/devops/devops-tools/devops-pipeline#:~:text=A%20DevOps%20pipeline%20is%20a,code%20to%20a%20production%20environment.)
