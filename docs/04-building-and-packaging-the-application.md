@@ -31,15 +31,14 @@ jobs:
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
-                name: modern-web-app-v${{ GITHUB_SHA }}}
-                path: .next/
+                name: modern-web-app-v${{ github.github_sha }}}
+                path: modern-web-app/.next/
 
 ```
 
 As you can see, we added a step to build the application and its dependecies with NPM. Finally, we use the upload-artifact GH Action to upload a build artifact that contains the code of the application.
 
-> "Only build packages once. We want to be sure the thing we’re deploying is the same thing we’ve tested throughout the deployment pipeline, so if a deployment fails we can eliminate the packages as the source of the failure."
-> -- by [continuousdelivery.com](https://continuousdelivery.com/implementing/patterns/)
+> "Only build packages once. We want to be sure the thing we’re deploying is the same thing we’ve tested throughout the deployment pipeline, so if a deployment fails we can eliminate the packages as the source of the failure." -- by [continuousdelivery.com](https://continuousdelivery.com/implementing/patterns/)
 
 ## Lab checklist
 
