@@ -40,3 +40,8 @@ jobs:
               run: |
                 npm ci
                 npm run build
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                name: modern-web-app-v${{ GITHUB_SHA }}}
+                path: ./next
