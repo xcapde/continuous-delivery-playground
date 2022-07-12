@@ -1,7 +1,7 @@
 # Lab 2: Creating a hello world pipeline
 
 ### GitHub Actions to create a CI/CD pipeline
-This tutorial uses github actions to create a hello world pipeline.
+The goal of this tutorial is to understand the basic use of github actions creating a hello world pipeline.
 
 
 The first step is to create a github workflow, create the following folder structure:
@@ -14,7 +14,7 @@ Now we create a workflow inside the workflows folder
 touch .github/workflows/pipeline.yml
 ```
 The next step is to add the pipeline definition.
-```
+```yml
 name: CI/CD Pipeline
 
 on: push
@@ -26,13 +26,13 @@ jobs:
         run: echo "Hello World!"
 ```
 ### Pipeline Core Concepts
-- ***Name***: This is just specifying a name for the workflow
-- ***On***: The on command is used to specify an event that will trigger the workflow, this event can be push, pull_request, etc
+- ***Name***: This is just specifying a name for the workflow.
+- ***On***: The on command is used to specify an event that will trigger the workflow, this event can be push, pull_request, etc.
 - ***Jobs***: Here we are specifying the job we want to run, in this case, we are setting up a build job.
-- ***Runs-on:***  is specifying the OS you want your workflow to run on 
-- ***Steps:*** Steps just indicate the various steps you want to run on that job
+- ***Runs-on***: is specifying the OS you want your workflow to run on.
+- ***Steps***: Steps just indicate the various steps you want to run on that job.
 
-### Let's test our workflow
+### Let's test our Pipeline
 Once the changes are commited the pipeline should run automatically as especified to run on push.
 
 ```
@@ -40,16 +40,6 @@ git add .
 git commit -m "Add workflow file"
 git push
 ```
-
-## Lab checklist
-
-- [x] Read the instructions
-- [ ] Create folder structure
-- [ ] Create a github workflow
-- [ ] Pipeline Core Concepts
-- [ ] Test the workflow
-- [ ] Useful Theory
-
 
 ## Useful Theory 
 [What is a pipeline?](https://www.atlassian.com/devops/devops-tools/devops-pipeline#:~:text=A%20DevOps%20pipeline%20is%20a,code%20to%20a%20production%20environment.)
@@ -66,3 +56,12 @@ Continuous delivery automates the entire software release process.
 [what is github actions?](https://resources.github.com/downloads/What-is-GitHub.Actions_.Benefits-and-examples.pdf)
 GitHub Actions brings automation directly into the software development lifecycle on GitHub via event-driven triggers. These
 triggers are specified events that can range from creating a pull request to building a new brand in a repository.
+
+[Github Actions Docs](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions?learn=getting_started)
+
+## Lab checklist
+
+- [x] Read the instructions
+- [ ] Create folder structure
+- [ ] Create a github workflow
+- [ ] Push the changes and check the pipeline execution in the Actions tab
