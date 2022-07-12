@@ -27,10 +27,8 @@ jobs:
     [....]
     deploy-prod:
         name: Deploy to prod
-        needs: check-performance
+        needs: build
         runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main'
-
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
@@ -38,6 +36,11 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ env.NODE_VERSION }}
+            - name: Download build artifact
+              uses: actions/download-artifact@v3
+              with:
+                name: modern-web-app-${{ github.sha }}
+                path: artifact_to_deploy
             - name: Deploy to prod environment
               run: |
                npm run deploy:simulate -- production
