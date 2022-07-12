@@ -1,7 +1,4 @@
 # Lab 6 - Continuous delivery: Adding a smoke test
-
-## Smoke test. What are they?
-
 ## Adding a smoke test to verify the deployment
 
 > Note: this lab builds upon the results of the previous labs
@@ -36,7 +33,12 @@ jobs:
             run: |
               npm run test:smoke -- https://google.es
 ```
+## Pipeline Concepts
+- ***if***: is a conditional used in this pipeline to control when the "verify-deployment" job can run. It will only run if the commit is pushed to the main branch.
 
+## Useful Theory
+[what are smoke tests?](https://circleci.com/blog/smoke-tests-in-cicd-pipelines/)
+Smoke tests are designed to reveal these types of failures early by running test cases that cover the critical components and functionality of the application. They also ensure that the application will function as expected in a deployed scenario.
 ## Lab checklist
 
 - [x] Read the instructions
