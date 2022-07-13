@@ -3,17 +3,23 @@
 ### GitHub Actions to create a CI/CD pipeline
 The goal of this tutorial is to understand the basic use of github actions creating a hello world pipeline.
 
+> Note: On the last lab you entered the modern-web-app directory, go back to the root before continuing with the instructions.
 
 The first step is to create a github workflow, create the following folder structure:
 ```
    mkdir .github/
    mkdir .github/workflows/
 ```
-Now we create a workflow inside the workflows folder
+Navigate to the folder we just created
+
+```
+   cd .github/workflows/
+```
+Now we create a workflow inside the workflows folder.
 ```
 touch .github/workflows/pipeline.yml
 ```
-The next step is to add the pipeline definition.
+The next step is to add the pipeline definition in the file we just created.
 ```yml
 name: CI/CD Pipeline
 
