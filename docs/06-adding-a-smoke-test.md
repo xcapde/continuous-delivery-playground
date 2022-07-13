@@ -10,6 +10,36 @@ For our case, the check is super simple, we will verify that the application loa
 > Note: If you choose to simulate a deployment in the previous step of the pipeline, you need to also simulate the smoke test.
 
 Contents of the smoke test script:
+```bash
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+target_url=${1:-http://localhost}
+
+echo "Running smoke test against: [${target_url}]"
+echo "Smoke test started"
+curl ${target_url}
+echo "Smoke test completed successfully!"
+```
+
+To be able to run the smoke test script you have to define it in the package.json in the modern-web-app. We'll add the test:smoke task to point to our moke-test script.
+```json
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:unit": "jest --ci",
+    "deploy:simulate": "../scripts/simulate-deployment.sh",
+    "test:smoke": "../scripts/smoke-test.sh"
+  }
+  [...]
+}
+
+```
+
 
 Lets add a new job to our pipeline that runs this script:
 
