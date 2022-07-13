@@ -20,6 +20,23 @@ Lets add a new job that allow us to deploy our modern web app to an environment 
 
 In order to do so, we will just simply run a command that simulates a deployment and tells when the deployment is completed.
 
+To be able to run the command you have to define it in the package.json in the modern-web-app. We'll add the deploy simulate task to point to our simulate-deployment script.
+```json
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:unit": "jest --ci",
+    "deploy:simulate": "../scripts/simulate-deployment.sh"
+  }
+  [...]
+}
+
+```
+
+
 Lets add a new job:
 
 ```
